@@ -14,20 +14,20 @@ if (window) {
 var expect = chai.expect;
 var should = chai.should();
 
-var CalculatorFactory = GLOBAL.CalculatorFactory;
+var CalculatorModule = GLOBAL.calculatorModule;
 
-describe("CalculatorFactory", function() {
+describe("CalculatorModule", function() {
 
   it('should be a function', function () {
-    expect(CalculatorFactory).to.exist;
-    expect(CalculatorFactory).to.be.an('function');
+    expect(CalculatorModule).to.exist;
+    expect(CalculatorModule).to.be.an('function');
   });
   it('should return an object literal when invoked', function () {
-    expect(CalculatorFactory()).to.be.an('object');
+    expect(CalculatorModule()).to.be.an('object');
   });
 
   describe('#load', function () {
-    var newCalc = CalculatorFactory();
+    var newCalc = CalculatorModule();
 
     it('should be a function available on a new calculator object', function () {
       expect(newCalc.load).to.be.a('function');
@@ -42,7 +42,7 @@ describe("CalculatorFactory", function() {
   });
 
   describe('#getTotal', function () {
-    var newCalc = CalculatorFactory();
+    var newCalc = CalculatorModule();
 
     it('should be a function that is available on the calculator', function () {
       expect(newCalc.getTotal).to.be.a('function');
@@ -59,7 +59,7 @@ describe("CalculatorFactory", function() {
   });
 
   describe('#add', function () {
-    var newCalc = CalculatorFactory();
+    var newCalc = CalculatorModule();
 
     it('should be a function available on a new calculator object', function () {
       expect(newCalc.add).to.be.a('function');
@@ -77,7 +77,7 @@ describe("CalculatorFactory", function() {
   });
 
   describe('#subtract', function () {
-    var newCalc = CalculatorFactory();
+    var newCalc = CalculatorModule();
 
     it('should be a function available on a new calculator object', function () {
       expect(newCalc.subtract).to.be.a('function');
@@ -95,7 +95,7 @@ describe("CalculatorFactory", function() {
   });
 
   describe('#multiply', function () {
-    var newCalc = CalculatorFactory();
+    var newCalc = CalculatorModule();
 
     it('should be a function available on a new calculator object', function () {
       expect(newCalc.multiply).to.be.a('function');
@@ -116,7 +116,7 @@ describe("CalculatorFactory", function() {
   });
 
   describe('#divide', function () {
-    var newCalc = CalculatorFactory();
+    var newCalc = CalculatorModule();
 
     it('should be a function available on a new calculator object', function () {
       expect(newCalc.divide).to.be.a('function');
@@ -134,7 +134,7 @@ describe("CalculatorFactory", function() {
   });
 
   describe('#recall', function () {
-    var newCalc = CalculatorFactory();
+    var newCalc = CalculatorModule();
     it('should be a function available on a new calculator object', function () {
       expect(newCalc.recall).to.be.a('function');
       expect(GLOBAL.recall).to.be.undefined;
@@ -146,7 +146,7 @@ describe("CalculatorFactory", function() {
   });
 
   describe('#save', function () {
-    var newCalc = CalculatorFactory();
+    var newCalc = CalculatorModule();
 
     it('should be a function available on a new calculator object', function () {
       expect(newCalc.save).to.be.a('function');
@@ -177,7 +177,7 @@ describe("CalculatorFactory", function() {
   });
 
   describe('#clear', function () {
-    var newCalc = CalculatorFactory();
+    var newCalc = CalculatorModule();
 
     it('should be a function available on a new calculator object', function () {
       expect(newCalc.clear).to.be.a('function');
@@ -216,12 +216,12 @@ describe("CalculatorFactory", function() {
       expect(GLOBAL.memory).to.be.undefined;
     });
     it('private variable are not attached to new calculator objects', function () {
-      var newCalc = CalculatorFactory();
+      var newCalc = CalculatorModule();
       expect(newCalc.total).to.be.undefined;
       expect(newCalc.memory).to.be.undefined;
     });
     it('If any calculator function is given a non-Number data type as an argument display an error message string', function () {
-      var newCalc = CalculatorFactory();
+      var newCalc = CalculatorModule();
       /*ADD*/
       expect(newCalc.add('')).to.be.a('string');
       expect(newCalc.add([])).to.be.a('string');
