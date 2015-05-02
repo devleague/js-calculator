@@ -14,29 +14,76 @@ if (window) {
 var expect = chai.expect;
 var should = chai.should();
 
-var calculator = GLOBAL.makeCalculator;
+var CalculatorFactory = GLOBAL.CalculatorFactory;
 
-describe("Calculator", function() {
-  var sandbox;
+describe("CalculatorFactory", function() {
 
-  beforeEach(function() {
-    // create a sandbox
-    sandbox = sinon.sandbox.create();
-
-    // stub some console methods
-    sandbox.stub(console, "log");
-    sandbox.stub(console, "error");
+  it('should be a function', function () {
+    expect(CalculatorFactory).to.exist;
+    expect(CalculatorFactory).to.be.an('function');
+  });
+  it('should return an object literal when invoked', function () {
+    expect(CalculatorFactory()).to.be.an('object');
   });
 
-  afterEach(function() {
-    // restore the environment as it was before
-    sandbox.restore();
+  describe('#load', function () {
+    var newCalc = CalculatorFactory();
+
+    it('should be a function exposed by a new calculator object', function () {
+      expect(newCalc.load).to.be.a('function');
+      expect(GLOBAL.load).to.be.undefined;
+    });
+    it('should set the first value to the calculator', function () {
+      expect(newCalc.load(666)).to.be.a('number');
+      expect(newCalc.load(3)).to.equal(3);
+      expect(newCalc.load(67)).to.equal(67);
+      expect(newCalc.load(903)).to.equal(903);
+    });
   });
 
-  describe('#makeCalculator', function () {
-    it('should be a function', function () {
-      expect(calculator).to.exist;
-      expect(calculator).to.be.an('function');
+  describe('#add', function () {
+    var newCalc = CalculatorFactory();
+
+    it('should be a function that is exposed by the object returned when calling `CalculatorFactory`', function () {
+      expect(newCalc.add).to.be.a('function');
+      expect(GLOBAL.add).to.be.undefined;
+    });
+    it('should take a Number and add it to the private variable `total` and return it\s value', function () {
+      newCalc.load(0);
+      expect(newCalc.add(0)).to.be.a('number');
+      expect(newCalc.add(1)).to.be.a('number');
+      expect(newCalc.add(3)).to.equal(4);
+      expect(newCalc.add(9871231)).to.equal(9871235);
+    });
+  });
+
+  describe('#subtract', function () {
+    var newCalc = CalculatorFactory();
+
+    it('should be a function that is exposed by the object returned when calling `CalculatorFactory`', function () {
+      expect(newCalc.subtract).to.be.a('function');
+      expect(GLOBAL.subtract).to.be.undefined;
+    });
+    it('should take a Number and subtract it from the private variable `total` and return it\s value', function () {
+      newCalc.load(321);
+      expect(newCalc.subtract(21)).to.be.a('number');
+      expect(newCalc.subtract(150)).to.equal(150);
+      expect(newCalc.subtract(151)).to.equal(-1);
+    });
+  });
+
+  describe('#multiply', function () {
+    var newCalc = CalculatorFactory();
+
+    it('should be a function that is exposed by the object returned when calling `CalculatorFactory`', function () {
+      expect(newCalc.multiply).to.be.a('function');
+      expect(GLOBAL.multiply).to.be.undefined;
+    });
+    it('should take a Number and multiply by the value of the private variable `total` and return it\s value', function () {
+      newCalc.load(1);
+      expect(newCalc.multiply(19)).to.be.a('number');
+      expect(newCalc.multiply(63)).to.equal(1197);
+      expect(newCalc.multiply(258)).to.equal(308826);
     });
   });
 
