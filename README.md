@@ -2,13 +2,13 @@
 
 We will be creating a calculators by utilizing the **Revealing Module Pattern**. Scope also comes into play in this exercise as a way to create functions and variables that are either both **privately** or **publically** available.
 
-The `CalculatorFactory` will return an object when invoked. This object will have functions attached to it that perform different operations. Users will not be able to access these functions without first creating a new Calculator.
+The `CalculatorModule` will return an object when invoked. This object will have functions attached to it that perform different operations. Users will not be able to access these functions without first creating a new Calculator.
 
 This calculator will also have private variables: `total` and `memory`. Users will not be able to access these values directly. Only the functions will be able to interact with those values, functions like: `.add()`, `.subtract()`, `.multiply()`, `.divide()`, etc.
 
 ##example of useage
 
-    var myCalculator = CalculatorFactory(); // creates a new calculator to be used
+    var myCalculator = calculatorModule(); // creates a new calculator to be used
     myCalculator.load(6); // initial value to be stored in a private variable named `total`
     myCalculator.add(5); // adds 5 to `total`
     myCalculator.getTotal(); // returns the value of `total`
