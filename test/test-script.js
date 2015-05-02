@@ -215,6 +215,11 @@ describe("CalculatorFactory", function() {
       expect(GLOBAL.total).to.be.undefined;
       expect(GLOBAL.memory).to.be.undefined;
     });
+    it('private variable are not attached to new calculator objects', function () {
+      var newCalc = CalculatorFactory();
+      expect(newCalc.total).to.be.undefined;
+      expect(newCalc.memory).to.be.undefined;
+    });
     it('If any calculator function is given a non-Number data type as an argument display an error message string', function () {
       var newCalc = CalculatorFactory();
       /*ADD*/
