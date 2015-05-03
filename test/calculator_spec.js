@@ -133,24 +133,24 @@ describe("calculatorModule", function() {
     });
   });
 
-  describe('#recall', function () {
+  describe('#recallMemory', function () {
     it('should be a function available on a new calculator object', function () {
       var newCalc = GLOBAL.calculatorModule();
-      expect(newCalc.recall).to.be.a('function');
-      expect(GLOBAL.recall).to.be.undefined;
+      expect(newCalc.recallMemory).to.be.a('function');
+      expect(GLOBAL.recallMemory).to.be.undefined;
     });
     it('should return the value of a number stored in memory', function () {
       var newCalc = GLOBAL.calculatorModule();
-      expect(newCalc.recall()).to.be.a('number');
-      expect(newCalc.recall()).to.equal(0);
+      expect(newCalc.recallMemory()).to.be.a('number');
+      expect(newCalc.recallMemory()).to.equal(0);
     });
   });
 
-  describe('#save', function () {
+  describe('#saveMemory', function () {
     it('should be a function available on a new calculator object', function () {
       var newCalc = GLOBAL.calculatorModule();
-      expect(newCalc.save).to.be.a('function');
-      expect(GLOBAL.save).to.be.undefined;
+      expect(newCalc.saveMemory).to.be.a('function');
+      expect(GLOBAL.saveMemory).to.be.undefined;
     });
     it('should save the number to the memory', function () {
       var newCalc = GLOBAL.calculatorModule();
@@ -159,31 +159,31 @@ describe("calculatorModule", function() {
       /*ADD*/
       newCalc.load(5);
       newCalc.add(763);
-      newCalc.save();
+      newCalc.saveMemory();
       expect(newCalc.recall()).to.equal(768);
       /*SUBTRACT*/
       newCalc.load(12812);
       newCalc.subtract(763);
-      newCalc.save();
+      newCalc.saveMemory();
       expect(newCalc.recall()).to.equal(12049);
       /*MULTIPLY*/
       newCalc.load(5);
       newCalc.multiply(763);
-      newCalc.save();
+      newCalc.saveMemory();
       expect(newCalc.recall()).to.equal(3815);
       /*DIVIDE*/
       newCalc.load(666);
       newCalc.divide(2);
-      newCalc.save();
+      newCalc.saveMemory();
       expect(newCalc.recall()).to.equal(333);
     });
   });
 
-  describe('#clear', function () {
+  describe('#clearMemory', function () {
     it('should be a function available on a new calculator object', function () {
       var newCalc = GLOBAL.calculatorModule();
-      expect(newCalc.clear).to.be.a('function');
-      expect(GLOBAL.clear).to.be.undefined;
+      expect(newCalc.clearMemory).to.be.a('function');
+      expect(GLOBAL.clearMemory).to.be.undefined;
     });
     it('should clear the memory', function () {
       var newCalc = GLOBAL.calculatorModule();
@@ -191,25 +191,25 @@ describe("calculatorModule", function() {
       newCalc.load(5);
       newCalc.add(763);
       newCalc.save();
-      newCalc.clear();
+      newCalc.clearMemory();
       expect(newCalc.recall()).to.equal(0);
       /*SUBTRACT*/
       newCalc.load(12812);
       newCalc.subtract(763);
       newCalc.save();
-      newCalc.clear();
+      newCalc.clearMemory();
       expect(newCalc.recall()).to.equal(0);
       /*MULTIPLY*/
       newCalc.load(5);
       newCalc.multiply(763);
       newCalc.save();
-      newCalc.clear();
+      newCalc.clearMemory();
       expect(newCalc.recall()).to.equal(0);
       /*DIVIDE*/
       newCalc.load(666);
       newCalc.divide(2);
       newCalc.save();
-      newCalc.clear();
+      newCalc.clearMemory();
       expect(newCalc.recall()).to.equal(0);
     });
   });
