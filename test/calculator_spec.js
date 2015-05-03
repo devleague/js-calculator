@@ -14,26 +14,24 @@ if (window) {
 var expect = chai.expect;
 var should = chai.should();
 
-var CalculatorModule = GLOBAL.calculatorModule;
-
-describe("CalculatorModule", function() {
+describe("calculatorModule", function() {
 
   it('should be a function', function () {
-    expect(CalculatorModule).to.exist;
-    expect(CalculatorModule).to.be.an('function');
+    expect(GLOBAL.calculatorModule).to.exist;
+    expect(GLOBAL.calculatorModule).to.be.an('function');
   });
   it('should return an object literal when invoked', function () {
-    expect(CalculatorModule()).to.be.an('object');
+    expect(GLOBAL.calculatorModule()).to.be.an('object');
   });
 
   describe('#load', function () {
-    var newCalc = CalculatorModule();
-
     it('should be a function available on a new calculator object', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.load).to.be.a('function');
       expect(GLOBAL.load).to.be.undefined;
     });
     it('should load a number into the calculator', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.load(666)).to.be.a('number');
       expect(newCalc.load(3)).to.equal(3);
       expect(newCalc.load(67)).to.equal(67);
@@ -42,13 +40,15 @@ describe("CalculatorModule", function() {
   });
 
   describe('#getTotal', function () {
-    var newCalc = CalculatorModule();
-
     it('should be a function that is available on the calculator', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.getTotal).to.be.a('function');
       expect(GLOBAL.getTotal).to.be.undefined;
     });
     it('should return the current total', function () {
+      var newCalc = GLOBAL.calculatorModule();
+      /*CHECK INITIAL VALUE*/
+      expect(newCalc.getTotal()).to.equal(0);
       newCalc.load(5);
       expect(newCalc.getTotal()).to.equal(5);
       newCalc.load(12812);
@@ -59,13 +59,13 @@ describe("CalculatorModule", function() {
   });
 
   describe('#add', function () {
-    var newCalc = CalculatorModule();
-
     it('should be a function available on a new calculator object', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.add).to.be.a('function');
       expect(GLOBAL.add).to.be.undefined;
     });
     it('should take a Number and add it to the total', function () {
+      var newCalc = GLOBAL.calculatorModule();
       newCalc.load(0);
       newCalc.add(0);
       expect(newCalc.getTotal()).to.be.a('number');
@@ -77,13 +77,13 @@ describe("CalculatorModule", function() {
   });
 
   describe('#subtract', function () {
-    var newCalc = CalculatorModule();
-
     it('should be a function available on a new calculator object', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.subtract).to.be.a('function');
       expect(GLOBAL.subtract).to.be.undefined;
     });
     it('should take a Number and subtract it from the total', function () {
+      var newCalc = GLOBAL.calculatorModule();
       newCalc.load(321);
       newCalc.subtract(21);
       expect(newCalc.getTotal()).to.be.a('number');
@@ -95,13 +95,13 @@ describe("CalculatorModule", function() {
   });
 
   describe('#multiply', function () {
-    var newCalc = CalculatorModule();
-
     it('should be a function available on a new calculator object', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.multiply).to.be.a('function');
       expect(GLOBAL.multiply).to.be.undefined;
     });
     it('should take a Number and multiply it by the total', function () {
+      var newCalc = GLOBAL.calculatorModule();
       newCalc.load(1);
       newCalc.multiply(19);
       expect(newCalc.getTotal()).to.be.a('number');
@@ -116,13 +116,13 @@ describe("CalculatorModule", function() {
   });
 
   describe('#divide', function () {
-    var newCalc = CalculatorModule();
-
     it('should be a function available on a new calculator object', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.divide).to.be.a('function');
       expect(GLOBAL.divide).to.be.undefined;
     });
     it('should take a Number and divide it by the total', function () {
+      var newCalc = GLOBAL.calculatorModule();
       newCalc.load(50);
       newCalc.divide(1);
       expect(newCalc.getTotal()).to.be.a('number');
@@ -134,25 +134,28 @@ describe("CalculatorModule", function() {
   });
 
   describe('#recall', function () {
-    var newCalc = CalculatorModule();
     it('should be a function available on a new calculator object', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.recall).to.be.a('function');
       expect(GLOBAL.recall).to.be.undefined;
     });
     it('should return the value of a number stored in memory', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.recall()).to.be.a('number');
       expect(newCalc.recall()).to.equal(0);
     });
   });
 
   describe('#save', function () {
-    var newCalc = CalculatorModule();
-
     it('should be a function available on a new calculator object', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.save).to.be.a('function');
       expect(GLOBAL.save).to.be.undefined;
     });
     it('should save the number to the memory', function () {
+      var newCalc = GLOBAL.calculatorModule();
+      /*CHECK INITIAL VALUE*/
+      expect(newCalc.recall()).to.equal(0);
       /*ADD*/
       newCalc.load(5);
       newCalc.add(763);
@@ -177,13 +180,13 @@ describe("CalculatorModule", function() {
   });
 
   describe('#clear', function () {
-    var newCalc = CalculatorModule();
-
     it('should be a function available on a new calculator object', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.clear).to.be.a('function');
       expect(GLOBAL.clear).to.be.undefined;
     });
     it('should clear the memory', function () {
+      var newCalc = GLOBAL.calculatorModule();
       /*ADD*/
       newCalc.load(5);
       newCalc.add(763);
@@ -210,42 +213,69 @@ describe("CalculatorModule", function() {
       expect(newCalc.recall()).to.equal(0);
     });
   });
-  describe('Validation', function () {
+  /*FINAL BOSS*/
+  describe('Validations', function () {
     it('private variables are not on the global namespace', function () {
       expect(GLOBAL.total).to.be.undefined;
       expect(GLOBAL.memory).to.be.undefined;
     });
-    it('private variable are not attached to new calculator objects', function () {
-      var newCalc = CalculatorModule();
+    it('private variables are not exposed by a calculator object', function () {
+      var newCalc = GLOBAL.calculatorModule();
       expect(newCalc.total).to.be.undefined;
       expect(newCalc.memory).to.be.undefined;
     });
     it('If any calculator function is given a non-Number data type as an argument display an error message string', function () {
-      var newCalc = CalculatorModule();
+      var newCalc = GLOBAL.calculatorModule();
+      /*LOAD*/
+      describe('#load', function () {
+        it('pass validations', function () {
+          expect(newCalc.load('')).to.be.a('string');
+          expect(newCalc.load([])).to.be.a('string');
+          expect(newCalc.load({})).to.be.a('string');
+          expect(newCalc.load(null)).to.be.a('string');
+          expect(newCalc.load(function(){})).to.be.a('string');
+        });
+      });
       /*ADD*/
-      expect(newCalc.add('')).to.be.a('string');
-      expect(newCalc.add([])).to.be.a('string');
-      expect(newCalc.add({})).to.be.a('string');
-      expect(newCalc.add(null)).to.be.a('string');
-      expect(newCalc.add(function(){})).to.be.a('string');
+      describe('#add', function () {
+        it('pass validations', function () {
+          expect(newCalc.add('')).to.be.a('string');
+          expect(newCalc.add([])).to.be.a('string');
+          expect(newCalc.add({})).to.be.a('string');
+          expect(newCalc.add(null)).to.be.a('string');
+          expect(newCalc.add(function(){})).to.be.a('string');
+        });
+      });
       /*SUBTRACT*/
-      expect(newCalc.subtract('')).to.be.a('string');
-      expect(newCalc.subtract([])).to.be.a('string');
-      expect(newCalc.subtract({})).to.be.a('string');
-      expect(newCalc.subtract(null)).to.be.a('string');
-      expect(newCalc.subtract(function(){})).to.be.a('string');
+      describe('#subtract', function () {
+        it('pass validations', function () {
+          expect(newCalc.subtract('')).to.be.a('string');
+          expect(newCalc.subtract([])).to.be.a('string');
+          expect(newCalc.subtract({})).to.be.a('string');
+          expect(newCalc.subtract(null)).to.be.a('string');
+          expect(newCalc.subtract(function(){})).to.be.a('string');
+        });
+      });
       /*MULTIPLY*/
-      expect(newCalc.multiply('')).to.be.a('string');
-      expect(newCalc.multiply([])).to.be.a('string');
-      expect(newCalc.multiply({})).to.be.a('string');
-      expect(newCalc.multiply(null)).to.be.a('string');
-      expect(newCalc.multiply(function(){})).to.be.a('string');
+      describe('#multiply', function () {
+        it('pass validations', function () {
+          expect(newCalc.multiply('')).to.be.a('string');
+          expect(newCalc.multiply([])).to.be.a('string');
+          expect(newCalc.multiply({})).to.be.a('string');
+          expect(newCalc.multiply(null)).to.be.a('string');
+          expect(newCalc.multiply(function(){})).to.be.a('string');
+        });
+      });
       /*DIVIDE*/
-      expect(newCalc.divide('')).to.be.a('string');
-      expect(newCalc.divide([])).to.be.a('string');
-      expect(newCalc.divide({})).to.be.a('string');
-      expect(newCalc.divide(null)).to.be.a('string');
-      expect(newCalc.divide(function(){})).to.be.a('string');
+      describe('#divide', function () {
+        it('pass validations', function () {
+          expect(newCalc.divide('')).to.be.a('string');
+          expect(newCalc.divide([])).to.be.a('string');
+          expect(newCalc.divide({})).to.be.a('string');
+          expect(newCalc.divide(null)).to.be.a('string');
+          expect(newCalc.divide(function(){})).to.be.a('string');
+        });
+      });
     });
   });
 });

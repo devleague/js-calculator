@@ -7,7 +7,6 @@
  */
 
 
-
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
@@ -46,13 +45,13 @@
 
 
   /**
-   * Stores the value of `total` to `memory`
+   * Return the value stored at `memory`
+   * @return { Number }
    */
 
 
   /**
-   * Return the value stored at `memory`
-   * @return { Number }
+   * Stores the value of `total` to `memory`
    */
 
 
