@@ -155,27 +155,27 @@ describe("calculatorModule", function() {
     it('should save the number to the memory', function () {
       var newCalc = GLOBAL.calculatorModule();
       /*CHECK INITIAL VALUE*/
-      expect(newCalc.recall()).to.equal(0);
+      expect(newCalc.recallMemory()).to.equal(0);
       /*ADD*/
       newCalc.load(5);
       newCalc.add(763);
       newCalc.saveMemory();
-      expect(newCalc.recall()).to.equal(768);
+      expect(newCalc.recallMemory()).to.equal(768);
       /*SUBTRACT*/
       newCalc.load(12812);
       newCalc.subtract(763);
       newCalc.saveMemory();
-      expect(newCalc.recall()).to.equal(12049);
+      expect(newCalc.recallMemory()).to.equal(12049);
       /*MULTIPLY*/
       newCalc.load(5);
       newCalc.multiply(763);
       newCalc.saveMemory();
-      expect(newCalc.recall()).to.equal(3815);
+      expect(newCalc.recallMemory()).to.equal(3815);
       /*DIVIDE*/
       newCalc.load(666);
       newCalc.divide(2);
       newCalc.saveMemory();
-      expect(newCalc.recall()).to.equal(333);
+      expect(newCalc.recallMemory()).to.equal(333);
     });
   });
 
@@ -190,27 +190,27 @@ describe("calculatorModule", function() {
       /*ADD*/
       newCalc.load(5);
       newCalc.add(763);
-      newCalc.save();
+      newCalc.saveMemory();
       newCalc.clearMemory();
-      expect(newCalc.recall()).to.equal(0);
+      expect(newCalc.recallMemory()).to.equal(0);
       /*SUBTRACT*/
       newCalc.load(12812);
       newCalc.subtract(763);
-      newCalc.save();
+      newCalc.saveMemory();
       newCalc.clearMemory();
-      expect(newCalc.recall()).to.equal(0);
+      expect(newCalc.recallMemory()).to.equal(0);
       /*MULTIPLY*/
       newCalc.load(5);
       newCalc.multiply(763);
-      newCalc.save();
+      newCalc.saveMemory();
       newCalc.clearMemory();
-      expect(newCalc.recall()).to.equal(0);
+      expect(newCalc.recallMemory()).to.equal(0);
       /*DIVIDE*/
       newCalc.load(666);
       newCalc.divide(2);
-      newCalc.save();
+      newCalc.saveMemory();
       newCalc.clearMemory();
-      expect(newCalc.recall()).to.equal(0);
+      expect(newCalc.recallMemory()).to.equal(0);
     });
   });
   /*FINAL BOSS*/
