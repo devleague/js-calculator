@@ -1,6 +1,6 @@
 # Js-Calculator
 
-We will be creating a calculators by utilizing the **Revealing Module Pattern**. Scope also comes into play in this exercise as a way to create functions and variables that are either both **privately** or **publically** available.
+We will be creating calculators by utilizing the **Revealing Module Pattern**. Scope also comes into play in this exercise as a way to create functions and variables that are either both **privately** or **publically** available.
 
 The `CalculatorModule` will return an object when invoked. This object will have functions attached to it that perform different operations. Users will not be able to access these functions without first creating a new Calculator.
 
