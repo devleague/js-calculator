@@ -24,5 +24,5 @@ This calculator will also have private variables: `total` and `memory`. Users wi
 ### References
 [Front-end Masters' JS fundamentals to functional](https://frontendmasters.com/courses/js-fundamentals-to-functional/#v=did85vfg6j&p=0.3508)
 
-[Essential Javascript Design Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
+[Essential Javascript Design Patterns - Module Pattern](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
 
