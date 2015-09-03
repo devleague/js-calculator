@@ -139,7 +139,7 @@ describe("calculatorModule", function() {
     });
 
     describe('#saveMemory', function () {
-      it('should be a function availableon a new calculator object', function () {
+      it('should be a function available on a new calculator object', function () {
         expect(newCalc.saveMemory).to.be.a('function');
         expect(GLOBAL.saveMemory).to.be.undefined;
       });
@@ -170,7 +170,7 @@ describe("calculatorModule", function() {
     });
 
     describe('#clearMemory', function () {
-      it('should be a function available n a new calculator object', function () {
+      it('should be a function available on a new calculator object', function () {
         expect(newCalc.clearMemory).to.be.a('function');
         expect(GLOBAL.clearMemory).to.be.undefined;
       });
