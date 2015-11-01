@@ -17,7 +17,7 @@ function calculatorModule () {
   var calculator = {
     load: function (num) {
       if (typeof num !== "number") {
-        return "This is not a number!";
+        throw new Error ("Error");
       }
       total = num;
       return total;
@@ -37,7 +37,7 @@ function calculatorModule () {
    */
     add: function (num) {
       if (typeof num !== "number") {
-        return "This is not a number!";
+        throw new Error ("Error");
       }
       total += num;
     },
@@ -48,7 +48,7 @@ function calculatorModule () {
    */
     subtract: function (num) {
       if (typeof num !== "number") {
-        return "This is not a number!";
+        throw new Error ("Error");
       }
       total -= num;
     },
@@ -59,7 +59,7 @@ function calculatorModule () {
    */
     multiply: function (num) {
       if (typeof num !== "number") {
-        return "This is not a number!";
+        throw new Error ("Error");
       }
       total *= num;
     },
@@ -70,7 +70,7 @@ function calculatorModule () {
    */
     divide: function (num) {
       if (typeof num !== "number") {
-        return "This is not a number!";
+        throw new Error ("Error");
       }
       total /= num;
     },
