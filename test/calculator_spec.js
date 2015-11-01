@@ -215,51 +215,51 @@ describe("calculatorModule", function() {
         /*LOAD*/
         describe('#load', function () {
           it('pass validations', function () {
-            expect(newCalc.load('')).to.be.a('string');
-            expect(newCalc.load([])).to.be.a('string');
-            expect(newCalc.load({})).to.be.a('string');
-            expect(newCalc.load(null)).to.be.a('string');
-            expect(newCalc.load(function(){})).to.be.a('string');
+            expect(newCalc.load.bind(null, '')).to.throw(Error);
+            expect(newCalc.load.bind(null, [])).to.throw(Error);
+            expect(newCalc.load.bind(null, {})).to.throw(Error);
+            expect(newCalc.load.bind(null, null)).to.throw(Error);
+            expect(newCalc.load.bind(null, function(){})).to.throw(Error);
           });
         });
         /*ADD*/
         describe('#add', function () {
           it('pass validations', function () {
-            expect(newCalc.add('')).to.be.a('string');
-            expect(newCalc.add([])).to.be.a('string');
-            expect(newCalc.add({})).to.be.a('string');
-            expect(newCalc.add(null)).to.be.a('string');
-            expect(newCalc.add(function(){})).to.be.a('string');
+            expect(newCalc.add.bind(null, '')).to.throw(Error);
+            expect(newCalc.add.bind(null, [])).to.throw(Error);
+            expect(newCalc.add.bind(null, {})).to.throw(Error);
+            expect(newCalc.add.bind(null, null)).to.throw(Error);
+            expect(newCalc.add.bind(null, function(){})).to.throw(Error);
           });
         });
         /*SUBTRACT*/
         describe('#subtract', function () {
           it('pass validations', function () {
-            expect(newCalc.subtract('')).to.be.a('string');
-            expect(newCalc.subtract([])).to.be.a('string');
-            expect(newCalc.subtract({})).to.be.a('string');
-            expect(newCalc.subtract(null)).to.be.a('string');
-            expect(newCalc.subtract(function(){})).to.be.a('string');
+            expect(newCalc.subtract.bind(null, '')).to.throw(Error);
+            expect(newCalc.subtract.bind(null, [])).to.throw(Error);
+            expect(newCalc.subtract.bind(null, {})).to.throw(Error);
+            expect(newCalc.subtract.bind(null, null)).to.throw(Error);
+            expect(newCalc.subtract.bind(null, function(){})).to.throw(Error);
           });
         });
         /*MULTIPLY*/
         describe('#multiply', function () {
           it('pass validations', function () {
-            expect(newCalc.multiply('')).to.be.a('string');
-            expect(newCalc.multiply([])).to.be.a('string');
-            expect(newCalc.multiply({})).to.be.a('string');
-            expect(newCalc.multiply(null)).to.be.a('string');
-            expect(newCalc.multiply(function(){})).to.be.a('string');
+            expect(newCalc.multiply.bind(null, '')).to.throw(Error);
+            expect(newCalc.multiply.bind(null, [])).to.throw(Error);
+            expect(newCalc.multiply.bind(null, {})).to.throw(Error);
+            expect(newCalc.multiply.bind(null, null)).to.throw(Error);
+            expect(newCalc.multiply.bind(null, function(){})).to.throw(Error);
           });
         });
         /*DIVIDE*/
         describe('#divide', function () {
           it('pass validations', function () {
-            expect(newCalc.divide('')).to.be.a('string');
-            expect(newCalc.divide([])).to.be.a('string');
-            expect(newCalc.divide({})).to.be.a('string');
-            expect(newCalc.divide(null)).to.be.a('string');
-            expect(newCalc.divide(function(){})).to.be.a('string');
+            expect(newCalc.divide.bind(null, '')).to.throw(Error);
+            expect(newCalc.divide.bind(null, [])).to.throw(Error);
+            expect(newCalc.divide.bind(null, {})).to.throw(Error);
+            expect(newCalc.divide.bind(null, null)).to.throw(Error);
+            expect(newCalc.divide.bind(null, function(){})).to.throw(Error);
           });
         });
       });
