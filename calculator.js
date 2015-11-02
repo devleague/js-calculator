@@ -1,8 +1,3 @@
-// var myCalculator = calculatorModule(); // creates a new calculator to be used
-//     myCalculator.load(6); // initial value to be stored in a private variable named `total`
-//     myCalculator.add(5); // adds 5 to `total`
-//     myCalculator.getTotal(); // returns the value of `total`
-
 /**
  * Declare a function named `calculatorModule`
  * this function will have two private variables declared inside of it.
@@ -108,8 +103,6 @@ function calculatorModule() {
   /**
    * Validation
    */
-      validation: function(x){
-        }
-    };
+};
   return calculator;
 }
