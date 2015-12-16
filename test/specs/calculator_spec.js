@@ -1,6 +1,5 @@
 describe("calculatorModule", function() {
   var newCalc;
-  var calculatorModule = GLOBAL.calculatorModule;
 
   it('should be a function', function () {
     expect(calculatorModule).to.exist;
