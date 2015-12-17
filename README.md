@@ -23,7 +23,7 @@ This calculator will also have private variables: `total` and `memory`. Users wi
 1. Fork this repository and clone it from your personal GitHub Account
 2. In the Terminal, navigate to the newly created folder for this repository
 3. Install dependencies by running the command: `npm install`
-4. Run tests by running the command: `mocha --watch --bail`
+4. Run tests by running the command: `npm test`
 5. Your work will be one in the file named: `calculator.js`
 6. Make your tests pass!
 
