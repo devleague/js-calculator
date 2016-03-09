@@ -3,7 +3,7 @@
 ## Goal
 The goal for this branch is to practice building modules. Separate out all the calculation functions into their own files, e.g. the code for `add` can be imported from a different file via the `require` function made available by the NodeJs environment.
 
-Create a module for all the calculations: `add`, `subtract`, `divide`, `multiply`(, `validation` if you've completed it before).
+Create a module for all the calculations: `add`, `subtract`, `divide`, `multiply`, `validation` if you've completed it before).
 
 Please consider good file structure. Where will you put all these new modules that will be created?
 
