@@ -1,22 +1,12 @@
-/****Check if Browser or CLI****/
-var window = window || undefined;
-
-if (window) {
-  GLOBAL = window;
-} else {
-  var fs = require('fs');
-  var vm = require('vm');
-  var chai = require('chai');
-  var functionsFile = fs.readFileSync(process.cwd() + '/calculator.js');
-  vm.runInThisContext(functionsFile); // file runs and it's contents has access to GLOBAL
-}
-/*******************************/
+var fs = require('fs');
+var vm = require('vm');
+var chai = require('chai');
+var calculatorModule = require('../calculator');
 var expect = chai.expect;
 var should = chai.should();
 
 describe("calculatorModule", function() {
-  var newCalc;
-  var calculatorModule = GLOBAL.calculatorModule;
+  var newCalc = null;
 
   it('should be a function', function () {
     expect(calculatorModule).to.exist;
@@ -33,7 +23,6 @@ describe("calculatorModule", function() {
     describe('#load', function () {
       it('should be a function available on a new calculator object', function () {
         expect(newCalc.load).to.be.a('function');
-        expect(GLOBAL.load).to.be.undefined;
       });
       it('should load a number into the calculator', function () {
         expect(newCalc.load(666)).to.be.a('number');
@@ -46,7 +35,6 @@ describe("calculatorModule", function() {
     describe('#getTotal', function () {
       it('should be a function that is available on the calculator', function () {
         expect(newCalc.getTotal).to.be.a('function');
-        expect(GLOBAL.getTotal).to.be.undefined;
       });
       it('should return the current total', function () {
         /*CHECK INITIAL VALUE*/
@@ -63,7 +51,6 @@ describe("calculatorModule", function() {
     describe('#add', function () {
       it('should be a function available on a new calculator object', function () {
         expect(newCalc.add).to.be.a('function');
-        expect(GLOBAL.add).to.be.undefined;
       });
       it('should take a Number and add it to the total', function () {
         newCalc.load(0);
@@ -79,7 +66,6 @@ describe("calculatorModule", function() {
     describe('#subtract', function () {
       it('should be a function available on a new calculator object', function () {
         expect(newCalc.subtract).to.be.a('function');
-        expect(GLOBAL.subtract).to.be.undefined;
       });
       it('should take a Number and subtract it from the total', function () {
         newCalc.load(321);
@@ -95,7 +81,6 @@ describe("calculatorModule", function() {
     describe('#multiply', function () {
       it('should be a function available on a new calculator object', function () {
         expect(newCalc.multiply).to.be.a('function');
-        expect(GLOBAL.multiply).to.be.undefined;
       });
       it('should take a Number and multiply it by the total', function () {
         newCalc.load(1);
@@ -114,7 +99,6 @@ describe("calculatorModule", function() {
     describe('#divide', function () {
       it('should be a function available on a new calculator object', function () {
         expect(newCalc.divide).to.be.a('function');
-        expect(GLOBAL.divide).to.be.undefined;
       });
       it('should take a Number and divide it by the total', function () {
         newCalc.load(50);
@@ -130,7 +114,6 @@ describe("calculatorModule", function() {
     describe('#recallMemory', function () {
       it('should be a function available on a new calculator object', function () {
         expect(newCalc.recallMemory).to.be.a('function');
-        expect(GLOBAL.recallMemory).to.be.undefined;
       });
       it('should return the value of a number stored in memory', function () {
         expect(newCalc.recallMemory()).to.be.a('number');
@@ -141,7 +124,6 @@ describe("calculatorModule", function() {
     describe('#saveMemory', function () {
       it('should be a function available on a new calculator object', function () {
         expect(newCalc.saveMemory).to.be.a('function');
-        expect(GLOBAL.saveMemory).to.be.undefined;
       });
       it('should save the number to the memory', function () {
         /*CHECK INITIAL VALUE*/
@@ -172,7 +154,6 @@ describe("calculatorModule", function() {
     describe('#clearMemory', function () {
       it('should be a function available on a new calculator object', function () {
         expect(newCalc.clearMemory).to.be.a('function');
-        expect(GLOBAL.clearMemory).to.be.undefined;
       });
       it('should clear the memory', function () {
         /*ADD*/
@@ -203,10 +184,6 @@ describe("calculatorModule", function() {
     });
     /*FINAL BOSS*/
     describe('Validations', function () {
-      it('private variables are not on the global namespace', function () {
-        expect(GLOBAL.total).to.be.undefined;
-        expect(GLOBAL.memory).to.be.undefined;
-      });
       it('private variables are not exposed by a calculator object', function () {
         expect(newCalc.total).to.be.undefined;
         expect(newCalc.memory).to.be.undefined;

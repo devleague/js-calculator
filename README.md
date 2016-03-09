@@ -1,34 +1,14 @@
-# Js-Calculator
+# Modularize-it Branch Details
 
-We will be creating calculators by utilizing the **Revealing Module Pattern**. Scope also comes into play in this exercise as a way to create functions and variables that are either both **privately** or **publically** available.
+## Goal
+The goal for this branch is to practice building modules. Separate out all the calculation functions into their own files, e.g. the code for `add` can be imported from a different file via the `require` function made available by the NodeJs environment.
 
-The `CalculatorModule` will return an object when invoked. This object will have functions attached to it that perform different operations. Users will not be able to access these functions without first creating a new Calculator.
+Create a module for all the calculations: `add`, `subtract`, `divide`, `multiply`(, `validation` if you've completed it before).
 
-This calculator will also have private variables: `total` and `memory`. Users will not be able to access these values directly. Only the functions will be able to interact with those values, functions like: `.add()`, `.subtract()`, `.multiply()`, `.divide()`, etc.
+Please consider good file structure. Where will you put all these new modules that will be created?
 
-**NOTE**: Make sure you **_VALIDATE_** all of your inputs!! 
+## References
+Learn about `module.exports` and `require` from [nodejs.org's docs](https://nodejs.org/api/modules.html#modules_module_exports).
 
-```javascript
-"taco" + 3 //Not valid
-```
-
-##Example of useage
-
-    var myCalculator = calculatorModule(); // creates a new calculator to be used
-    myCalculator.load(6); // initial value to be stored in a private variable named `total`
-    myCalculator.add(5); // adds 5 to `total`
-    myCalculator.getTotal(); // returns the value of `total`
-
-## Getting Started
-1. Fork this repository and clone it from your personal GitHub Account
-2. In the Terminal, navigate to the newly created folder for this repository
-3. Install dependencies by running the command: `npm install`
-4. Run tests by running the command: `npm test`
-5. Your work will be one in the file named: `calculator.js`
-6. Make your tests pass!
-
-### References
-[Front-end Masters' JS fundamentals to functional](https://frontendmasters.com/courses/js-fundamentals-to-functional/#v=did85vfg6j&p=0.3508)
-
-[Essential Javascript Design Patterns - Module Pattern](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
-
+## Caveats
+This branch in meant to only work with the NodeJs platform only. There is no support for running this exercise in the browser environment.
