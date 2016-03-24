@@ -12,5 +12,5 @@ if (window) {
 }
 
 /**
-* Setup chai and write tests below
+* write tests below
 */
