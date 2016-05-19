@@ -22,14 +22,25 @@ function calculatorModule () {
   };
 
   /**
+   * Checks user input
+   * @param {Number} x input
+   * throws Error if input is invalid.
+   */
+  function checkInput(x) {
+    if(typeof x != 'number'){
+      throw new Error("Invalid Input");
+    }
+  }
+  /**
    * sets the `total` to the number passed in
    * @param  { Number } x
    * @return { Number }    current total
    */
    function setPublicTotal (x) {
-    if(x === '' || x === [] || x === {} || x === null || typeof x != 'number'){
-      throw new Error("Invalid Input");
-    }
+    if(checkInput(x));
+    // if(x === '' || x === [] || x === {} || x === null || typeof x != 'number'){
+    //   throw new Error("Invalid Input");
+    // }
     else {
       total = x;
       return total;
@@ -50,8 +61,12 @@ function calculatorModule () {
    * @param { Number } x
    */
    function sumTotal(x) {
-    total+=x;
-    return total;
+    if(checkInput(x)) {
+    }
+    else {
+      total+=x;
+      return total;
+    }
    }
 
   /**
@@ -59,8 +74,12 @@ function calculatorModule () {
    * @param  { Number } x
    */
    function differenceTotal(x) {
-    total-=x;
-    return total;
+    if(checkInput(x)) {
+    }
+    else {
+      total-=x;
+      return total;
+    }
    }
 
   /**
@@ -68,8 +87,12 @@ function calculatorModule () {
    * @param  { Number } x
    */
    function productTotal(x) {
-    total*=x;
-    return total;
+    if(checkInput(x)) {
+    }
+    else {
+      total*=x;
+      return total;
+    }
    }
 
   /**
@@ -77,8 +100,12 @@ function calculatorModule () {
    * @param  { Number } x
    */
    function quotientTotal(x) {
-    total/=x;
-    return total;
+    if(checkInput(x)) {
+    }
+    else {
+      total/=x;
+      return total;
+    }
    }
 
   /**
