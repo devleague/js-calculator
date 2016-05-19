@@ -6,7 +6,7 @@
  * @return {object} `calculator` object that can be used
  */
 var calculatorModule = function () {
-  var memory;
+  var memory = 0;
   var total = 0;
 
   return {
@@ -15,7 +15,8 @@ var calculatorModule = function () {
     add: add,
     subtract: subtract,
     multiply: multiply,
-    divide: divide
+    divide: divide,
+    recallMemory: recallMemory
   };
 
 
@@ -77,7 +78,9 @@ var calculatorModule = function () {
    * Return the value stored at `memory`
    * @return { Number }
    */
-
+    function recallMemory(argument) {
+      return memory;
+    }
 
   /**
    * Stores the value of `total` to `memory`
