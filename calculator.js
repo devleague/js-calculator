@@ -33,6 +33,13 @@ function calculatorModule(x){
     subtract: function(x){
                 calculator.total = calculator.total - x;
               },
+    multiply: function(x){
+                calculator.total = calculator.total * x;
+              },
+    divide: function(x){
+                calculator.total = calculator.total / x;
+            },
+
 
   };
 
