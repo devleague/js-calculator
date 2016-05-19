@@ -5,14 +5,19 @@
  * @variable PRIVATE { Number } `total`
  * @return {object} `calculator` object that can be used
  */
-
+function calculatorModule(){
+  var calculator = {
+    memory: 0,
+    total: 0
+  };
+  return calculator;
+}
 
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
    * @return { Number }    current total
    */
-
 
   /**
    * Return the value of `total`
