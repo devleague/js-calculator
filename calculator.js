@@ -6,7 +6,7 @@
  * @return {object} `calculator` object that can be used
  */
 var calculatorModule = function (){
-  var memory = {};
+  var memory = 0;
   var total = 0;
   return {
     load: load,
@@ -82,8 +82,8 @@ var calculatorModule = function (){
    * Return the value stored at `memory`
    * @return { Number }
    */
-  function recallMemory(){
-
+  function recallMemory(x){
+    return memory;
   }
 
 
