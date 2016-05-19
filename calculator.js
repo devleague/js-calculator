@@ -6,8 +6,8 @@
  * @return {object} `calculator` object that can be used
  */
 var calculatorModule = function() {
-  var memory = null;
-  var total = null;
+  var memory = 0;
+  var total = 0;
   var calculator = {};
   /**
    * sets the `total` to the number passed in
@@ -15,18 +15,16 @@ var calculatorModule = function() {
    * @return { Number }    current total
    */
   calculator.load = function(number){
-    //memory = number;
     total = number;
     return total;
   };
-  console.log("Just calculator" + calculator);
-  console.log("Total" + total);
+
   /**
    * Return the value of `total`
    * @return { Number }
    */
-  calculator.getTotal = function(number){
-    return number;
+  calculator.getTotal = function(){
+    return total;
   };
 
   /**
@@ -34,7 +32,8 @@ var calculatorModule = function() {
    * @param { Number } x
    */
   calculator.add = function(number){
-    return number;
+    total = total + number;
+    return total;
   };
 
   /**
@@ -42,7 +41,8 @@ var calculatorModule = function() {
    * @param  { Number } x
    */
   calculator.subtract = function(number){
-    return number;
+    total = total - number;
+    return total;
   };
 
   /**
@@ -50,7 +50,8 @@ var calculatorModule = function() {
    * @param  { Number } x
    */
   calculator.multiply = function(number){
-    return number;
+    total = total * number;
+    return total;
   };
 
   /**
@@ -58,7 +59,8 @@ var calculatorModule = function() {
    * @param  { Number } x
    */
   calculator.divide = function(number){
-    return number;
+    total = total/number;
+    return total;
   };
 
   /**
@@ -66,21 +68,21 @@ var calculatorModule = function() {
    * @return { Number }
    */
   calculator.recallMemory = function(number){
-    return number;
+    return memory;
   };
 
   /**
    * Stores the value of `total` to `memory`
    */
-  calculator.saveMemory = function(number){
-    return number;
+  calculator.saveMemory = function(){
+    memory = total;
   };
 
   /**
    * Clear the value stored at `memory`
    */
   calculator.clearMemory = function(number){
-    return number;
+    memory = 0;
   };
 
   return calculator;
