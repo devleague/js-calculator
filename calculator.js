@@ -15,6 +15,7 @@ var calculatorModule = function (){
     subtract: subtract,
     multiply: multiply,
     divide: divide,
+    recallMemory: recallMemory
 
    };
 
@@ -81,6 +82,9 @@ var calculatorModule = function (){
    * Return the value stored at `memory`
    * @return { Number }
    */
+  function recallMemory(){
+
+  }
 
 
   /**
