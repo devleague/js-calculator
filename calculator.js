@@ -9,22 +9,27 @@ function calculatorModule () {
   var memory = 0;
   var total = 0;
   return {
-
+    load: load,
+    getTotal: getTotal
   };
-}
+
 
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
    * @return { Number }    current total
    */
-
+   function load (num) {
+    return total = parseFloat(num);
+   }
 
   /**
    * Return the value of `total`
    * @return { Number }
    */
-
+   function getTotal () {
+    return total;
+   }
 
   /**
    * Sums the value passed in with `total`
@@ -69,3 +74,4 @@ function calculatorModule () {
    * Validation
    */
 
+}
