@@ -12,6 +12,7 @@ var calculatorModule = function (){
     load: load,
     getTotal: getTotal,
     add: add,
+    subtract: subtract,
 
    };
 
