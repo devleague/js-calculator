@@ -8,6 +8,7 @@
 function calculatorModule () {
   var memory = 0;
   var total = 0;
+
   return {
     load: load,
     getTotal: getTotal,
@@ -27,7 +28,12 @@ function calculatorModule () {
    * @return { Number }    current total
    */
   function load (num) {
-    return total = parseFloat(num);
+    console.log('isNaN: ', isNaN(num), num, typeof num);
+    if (checkNum(num)) {
+
+    } else {
+      return total = num;
+    }
   }
 
   /**
@@ -44,7 +50,11 @@ function calculatorModule () {
    */
 
   function add (num) {
+    if (checkNum(num)) {
+
+    } else {
     return total += parseFloat(num);
+    }
   }
 
   /**
@@ -53,7 +63,11 @@ function calculatorModule () {
    */
 
   function subtract (num) {
+    if (checkNum(num)) {
+
+    } else {
     return total -= parseFloat(num);
+    }
   }
 
   /**
@@ -62,7 +76,11 @@ function calculatorModule () {
    */
 
   function multiply (num) {
+    if (checkNum(num)) {
+
+    } else {
     return total *= parseFloat(num);
+    }
   }
 
   /**
@@ -71,7 +89,11 @@ function calculatorModule () {
    */
 
   function divide (num) {
+    if (checkNum(num)) {
+
+    } else {
     return total /= parseFloat(num);
+    }
   }
 
   /**
@@ -102,5 +124,9 @@ function calculatorModule () {
   /**
    * Validation
    */
-
+  function checkNum (num) {
+    if (typeof num !== 'number') {
+      throw new Error('Not A Number.');
+    }
+  }
 }
