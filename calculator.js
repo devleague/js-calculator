@@ -31,6 +31,8 @@ function calculatorModule(){
    * @param { Number } x
    */
   function add(num){
+    if(typeof num !== 'number')
+      throw new TypeError("Not a Number");
     total += num;
     return total;
   }
@@ -39,6 +41,8 @@ function calculatorModule(){
    * @param  { Number } x
    */
   function subtract(num){
+    if(typeof num !== 'number')
+      throw new TypeError("Not a Number");
     total -= num;
     return total;
   }
@@ -47,6 +51,8 @@ function calculatorModule(){
    * @param  { Number } x
    */
   function multiply(num){
+    if(typeof num !== 'number')
+      throw new TypeError("Not a Number");
     total *= num;
     return total;
   }
@@ -55,6 +61,8 @@ function calculatorModule(){
    * @param  { Number } x
    */
   function divide(num){
+    if(typeof num !== 'number')
+      throw new TypeError("Not a Number");
     total /= num;
     return total;
   }
