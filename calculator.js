@@ -5,6 +5,9 @@
  * @variable PRIVATE { Number } `total`
  * @return {object} `calculator` object that can be used
  */
+ var calculatorModule = function (){
+
+ };
 
 
   /**
