@@ -26,21 +26,26 @@ function calculatorModule(){
   function getTotal(){
     return total;
   }
+  /**
+   * Sums the value passed in with `total`
+   * @param { Number } x
+   */
+  function add(num){
+    total += num;
+    return total;
+  }
 
 
   return {
     load:load,
-    getTotal:getTotal
+    getTotal:getTotal,
+    add:add
   };
 }
 
 
 
 
-  /**
-   * Sums the value passed in with `total`
-   * @param { Number } x
-   */
 
 
   /**
