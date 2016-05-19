@@ -5,59 +5,86 @@
  * @variable PRIVATE { Number } `total`
  * @return {object} `calculator` object that can be used
  */
-
-
+var calculatorModule = function() {
+  var memory = null;
+  var total = null;
+  var calculator = {};
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
    * @return { Number }    current total
    */
-
-
+  calculator.load = function(number){
+    //memory = number;
+    total = number;
+    return total;
+  };
+  console.log("Just calculator" + calculator);
+  console.log("Total" + total);
   /**
    * Return the value of `total`
    * @return { Number }
    */
-
+  calculator.getTotal = function(number){
+    return number;
+  };
 
   /**
    * Sums the value passed in with `total`
    * @param { Number } x
    */
-
+  calculator.add = function(number){
+    return number;
+  };
 
   /**
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
-
+  calculator.subtract = function(number){
+    return number;
+  };
 
   /**
    * Multiplies the value by `total`
    * @param  { Number } x
    */
-
+  calculator.multiply = function(number){
+    return number;
+  };
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
-
+  calculator.divide = function(number){
+    return number;
+  };
 
   /**
    * Return the value stored at `memory`
    * @return { Number }
    */
-
+  calculator.recallMemory = function(number){
+    return number;
+  };
 
   /**
    * Stores the value of `total` to `memory`
    */
-
+  calculator.saveMemory = function(number){
+    return number;
+  };
 
   /**
    * Clear the value stored at `memory`
    */
+  calculator.clearMemory = function(number){
+    return number;
+  };
+
+  return calculator;
+};
 
   /**
    * Validation
