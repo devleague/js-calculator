@@ -49,7 +49,11 @@ var calculatorModule = function () {
    * @param { Number } x
    */
     function add(x) {
-      total +=x;
+      if (typeof x !== "number"){
+        throw new Error("Oh oh, an error has occured");
+      }else{
+        total +=x;
+      }
     }
 
 
