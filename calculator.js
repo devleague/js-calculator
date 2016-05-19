@@ -91,14 +91,15 @@ var calculatorModule = function (){
   /**
    * Stores the value of `total` to `memory`
    */
-  function saveMemory(){
-    total = memory;
+  function saveMemory(x){
+    memory = total;
   }
 
 
   /**
    * Clear the value stored at `memory`
    */
+
 
   /**
    * Validation
