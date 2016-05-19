@@ -14,8 +14,6 @@ function calculatorModule(){
    * @return { Number }    current total
    */
   function load(num){
-    if(typeof num !== 'number')
-      throw new TypeError("Not a Number");
     total = num;
     return total;
   }
@@ -31,8 +29,6 @@ function calculatorModule(){
    * @param { Number } x
    */
   function add(num){
-    if(typeof num !== 'number')
-      throw new TypeError("Not a Number");
     total += num;
     return total;
   }
@@ -41,8 +37,6 @@ function calculatorModule(){
    * @param  { Number } x
    */
   function subtract(num){
-    if(typeof num !== 'number')
-      throw new TypeError("Not a Number");
     total -= num;
     return total;
   }
@@ -51,8 +45,6 @@ function calculatorModule(){
    * @param  { Number } x
    */
   function multiply(num){
-    if(typeof num !== 'number')
-      throw new TypeError("Not a Number");
     total *= num;
     return total;
   }
@@ -61,8 +53,6 @@ function calculatorModule(){
    * @param  { Number } x
    */
   function divide(num){
-    if(typeof num !== 'number')
-      throw new TypeError("Not a Number");
     total /= num;
     return total;
   }
@@ -90,14 +80,22 @@ function calculatorModule(){
    * Validation
    */
 
+   function validateFunction(fn){
+    return function(n){
+      if(typeof n !== typeof 0)
+        throw new TypeError("Not a Number");
+      return fn(n);
+    };
+   }
+
 
   return {
-    load:load,
+    load:validateFunction(load),
     getTotal:getTotal,
-    add:add,
-    subtract:subtract,
-    multiply:multiply,
-    divide:divide,
+    add:validateFunction(add),
+    subtract:validateFunction(subtract),
+    multiply:validateFunction(multiply),
+    divide:validateFunction(divide),
     recallMemory:recallMemory,
     saveMemory:saveMemory,
     clearMemory:clearMemory
