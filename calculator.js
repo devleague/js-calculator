@@ -42,14 +42,14 @@ function calculatorModule(){
     total -= num;
     return total;
   }
-
-
   /**
    * Multiplies the value by `total`
    * @param  { Number } x
    */
-
-
+  function multiply(num){
+    total *= num;
+    return total;
+  }
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
@@ -80,7 +80,8 @@ function calculatorModule(){
     load:load,
     getTotal:getTotal,
     add:add,
-    subtract:subtract
+    subtract:subtract,
+    multiply:multiply
   };
 }
 
