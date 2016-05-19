@@ -10,7 +10,11 @@ function calculatorModule () {
   var total = 0;
   return {
     load: load,
-    getTotal: getTotal
+    getTotal: getTotal,
+    add: add,
+    subtract: subtract,
+    multiply: multiply,
+    divide: divide
   };
 
 
@@ -19,41 +23,53 @@ function calculatorModule () {
    * @param  { Number } x
    * @return { Number }    current total
    */
-   function load (num) {
+  function load (num) {
     return total = parseFloat(num);
-   }
+  }
 
   /**
    * Return the value of `total`
    * @return { Number }
    */
-   function getTotal () {
+  function getTotal () {
     return total;
-   }
+  }
 
   /**
    * Sums the value passed in with `total`
    * @param { Number } x
    */
 
+  function add (num) {
+    return total += parseFloat(num);
+  }
 
   /**
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
 
+  function subtract (num) {
+    return total -= parseFloat(num);
+  }
 
   /**
    * Multiplies the value by `total`
    * @param  { Number } x
    */
 
+  function multiply (num) {
+    return total *= parseFloat(num);
+  }
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
 
+  function divide (num) {
+    return total /= parseFloat(num);
+  }
 
   /**
    * Return the value stored at `memory`
