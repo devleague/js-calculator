@@ -74,6 +74,9 @@ function calculatorModule(){
   /**
    * Clear the value stored at `memory`
    */
+  function clearMemory(){
+    memory = 0;
+  }
 
   /**
    * Validation
@@ -88,7 +91,8 @@ function calculatorModule(){
     multiply:multiply,
     divide:divide,
     recallMemory:recallMemory,
-    saveMemory:saveMemory
+    saveMemory:saveMemory,
+    clearMemory:clearMemory
   };
 }
 
