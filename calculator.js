@@ -6,14 +6,18 @@
  * @return {object} `calculator` object that can be used
  */
  var calculatorModule = function (){
+  var memory;
+  var total;
   return {
-    load: function(){
+    load: function(number){
+      return number;
+
 
     }
   };
 
 
- };
+
 
 
   /**
@@ -72,3 +76,4 @@
    * Validation
    */
 
+  };
