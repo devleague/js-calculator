@@ -28,8 +28,12 @@ var calculatorModule = function () {
    * @return { Number }    current total
    */
     function load(x) {
-      total = x;
-      return total;
+      if (typeof x !== "number"){
+        throw new Error("Oh oh, an error has occured");
+      }else{
+        total = x;
+        return total;
+      }
     }
 
   /**
