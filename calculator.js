@@ -79,14 +79,14 @@ var calculatorModule = function () {
    * Return the value stored at `memory`
    * @return { Number }
    */
-    function recallMemory(argument) {
+    function recallMemory() {
       return memory;
     }
 
   /**
    * Stores the value of `total` to `memory`
    */
-    function saveMemory(argument) {
+    function saveMemory() {
       memory = total;
     }
 
