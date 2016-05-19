@@ -11,7 +11,8 @@ var calculatorModule = function () {
 
   return {
     load: load,
-    getTotal: getTotal
+    getTotal: getTotal,
+    add: add
   };
 
 
@@ -37,6 +38,9 @@ var calculatorModule = function () {
    * Sums the value passed in with `total`
    * @param { Number } x
    */
+    function add(x) {
+      total +=x;
+    }
 
 
   /**
