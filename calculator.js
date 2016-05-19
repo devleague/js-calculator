@@ -34,24 +34,14 @@ function calculatorModule(){
     total += num;
     return total;
   }
-
-
-  return {
-    load:load,
-    getTotal:getTotal,
-    add:add
-  };
-}
-
-
-
-
-
-
   /**
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
+  function subtract(num){
+    total -= num;
+    return total;
+  }
 
 
   /**
@@ -84,4 +74,18 @@ function calculatorModule(){
   /**
    * Validation
    */
+
+
+  return {
+    load:load,
+    getTotal:getTotal,
+    add:add,
+    subtract:subtract
+  };
+}
+
+
+
+
+
 
