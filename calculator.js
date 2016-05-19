@@ -5,20 +5,31 @@
  * @variable PRIVATE { Number } `total`
  * @return {object} `calculator` object that can be used
  */
+function calculatorModule () {
+  var memory;
+  var total;
 
-
+  return {
+    load: setPublicTotal,
+    getTotal: getPublicTotal
+  };
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
    * @return { Number }    current total
    */
-
+   function setPublicTotal (x) {
+    total = x;
+    return total;
+   }
 
   /**
    * Return the value of `total`
    * @return { Number }
    */
-
+   function getPublicTotal() {
+    return total;
+   }
 
   /**
    * Sums the value passed in with `total`
@@ -63,3 +74,4 @@
    * Validation
    */
 
+}
