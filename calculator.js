@@ -21,6 +21,7 @@ function calculatorModule(x){
   var total = 0;
   var calculator = {
     load: function(x){
+            validate(x);
             total = x;
             return total;
           },
@@ -28,15 +29,19 @@ function calculatorModule(x){
                 return total;
               },
     add: function(x){
+            validate(x);
             total = total + x;
           },
     subtract: function(x){
+                validate(x);
                 total = total - x;
               },
     multiply: function(x){
+                validate(x);
                 total = total * x;
               },
     divide: function(x){
+                validate(x);
                 total = total / x;
             },
     recallMemory: function(){
@@ -49,6 +54,12 @@ function calculatorModule(x){
                     memory = 0;
                   },
   };
+
+  function validate(x){
+    if(typeof x !== "number"){
+      throw new Error();
+    }
+  }
 
   return calculator;
 }
