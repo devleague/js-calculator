@@ -29,8 +29,11 @@ function calculatorModule(x){
               },
     add: function(x){
             calculator.total = calculator.total + x;
-            return calculator.total;
-          }
+          },
+    subtract: function(x){
+                calculator.total = calculator.total - x;
+              },
+
   };
 
   return calculator;
