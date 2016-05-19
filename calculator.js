@@ -16,7 +16,8 @@ var calculatorModule = function () {
     subtract: subtract,
     multiply: multiply,
     divide: divide,
-    recallMemory: recallMemory
+    recallMemory: recallMemory,
+    saveMemory: saveMemory
   };
 
 
@@ -85,6 +86,9 @@ var calculatorModule = function () {
   /**
    * Stores the value of `total` to `memory`
    */
+    function saveMemory(argument) {
+      memory = total;
+    }
 
 
   /**
