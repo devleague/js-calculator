@@ -14,7 +14,8 @@ var calculatorModule = function () {
     getTotal: getTotal,
     add: add,
     subtract: subtract,
-    multiply: multiply
+    multiply: multiply,
+    divide: divide
   };
 
 
@@ -67,6 +68,9 @@ var calculatorModule = function () {
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
+    function divide(x) {
+      total /=x;
+    }
 
 
   /**
