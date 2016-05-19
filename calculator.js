@@ -6,21 +6,35 @@
  * @return {object} `calculator` object that can be used
  */
 function calculatorModule () {
-  var memory;
-  var total;
+  var memory = 0;
+  var total = 0;
 
   return {
     load: setPublicTotal,
-    getTotal: getPublicTotal
+    getTotal: getPublicTotal,
+    add: sumTotal,
+    subtract: differenceTotal,
+    multiply: productTotal,
+    divide: quotientTotal,
+    recallMemory: getMemory,
+    saveMemory: storeToMemory,
+    clearMemory: clearMemory
   };
+
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
    * @return { Number }    current total
    */
    function setPublicTotal (x) {
-    total = x;
-    return total;
+    if(x === '' || x === [] || x === {} || x === null || typeof x != 'number'){
+      throw new Error("Invalid Input");
+    }
+    else {
+      total = x;
+      return total;
+    }
+
    }
 
   /**
@@ -35,41 +49,59 @@ function calculatorModule () {
    * Sums the value passed in with `total`
    * @param { Number } x
    */
-
+   function sumTotal(x) {
+    total+=x;
+    return total;
+   }
 
   /**
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
-
+   function differenceTotal(x) {
+    total-=x;
+    return total;
+   }
 
   /**
    * Multiplies the value by `total`
    * @param  { Number } x
    */
-
+   function productTotal(x) {
+    total*=x;
+    return total;
+   }
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
-
+   function quotientTotal(x) {
+    total/=x;
+    return total;
+   }
 
   /**
    * Return the value stored at `memory`
    * @return { Number }
    */
-
+   function getMemory() {
+    return memory;
+   }
 
   /**
    * Stores the value of `total` to `memory`
    */
-
+   function storeToMemory() {
+    memory = total;
+   }
 
   /**
    * Clear the value stored at `memory`
    */
-
+   function clearMemory () {
+    memory = 0;
+   }
   /**
    * Validation
    */
