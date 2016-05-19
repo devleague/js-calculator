@@ -39,8 +39,15 @@ function calculatorModule(x){
     divide: function(x){
                 calculator.total = calculator.total / x;
             },
-
-
+    recallMemory: function(){
+                    return calculator.memory;
+                  },
+    saveMemory: function(){
+                  calculator.memory = calculator.total;
+                },
+    clearMemory: function(){
+                    calculator.memory = 0;
+                  },
   };
 
   return calculator;
