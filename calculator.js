@@ -6,16 +6,12 @@
  * @return {object} `calculator` object that can be used
  */
 var calculatorModule = function (){
-  var memory;
-  var total;
+  var memory = {};
+  var total = 0;
   return {
-    load: function(number){
-      return number;
-    },
-    getTotal: function(){
-
-    }
-  };
+    load: load,
+    getTotal: getTotal
+   };
 
 
   /**
@@ -23,11 +19,21 @@ var calculatorModule = function (){
    * @param  { Number } x
    * @return { Number }    current total
    */
+  function load(x){
+    total = x;
+    return total;
+   }
+
 
   /**
    * Return the value of `total`
    * @return { Number }
    */
+  function getTotal(){
+    return total;
+
+  }
+
 
 
   /**
@@ -72,5 +78,4 @@ var calculatorModule = function (){
   /**
    * Validation
    */
-
-  };
+};
