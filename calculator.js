@@ -19,18 +19,22 @@ function calculatorModule(){
     total = num;
     return total;
   }
-
-
-  return {
-  };
-}
-
-
-
   /**
    * Return the value of `total`
    * @return { Number }
    */
+  function getTotal(){
+    return total;
+  }
+
+
+  return {
+    load:load,
+    getTotal:getTotal
+  };
+}
+
+
 
 
   /**
