@@ -17,36 +17,36 @@
    * @return { Number }
    */
 function calculatorModule(x){
+  var memory = 0;
+  var total = 0;
   var calculator = {
-    memory: 0,
-    total: 0,
     load: function(x){
-            calculator.total = x;
-            return calculator.total;
+            total = x;
+            return total;
           },
-    getTotal: function(x){
-                return calculator.total;
+    getTotal: function(){
+                return total;
               },
     add: function(x){
-            calculator.total = calculator.total + x;
+            total = total + x;
           },
     subtract: function(x){
-                calculator.total = calculator.total - x;
+                total = total - x;
               },
     multiply: function(x){
-                calculator.total = calculator.total * x;
+                total = total * x;
               },
     divide: function(x){
-                calculator.total = calculator.total / x;
+                total = total / x;
             },
     recallMemory: function(){
-                    return calculator.memory;
+                    return memory;
                   },
     saveMemory: function(){
-                  calculator.memory = calculator.total;
+                  memory = total;
                 },
     clearMemory: function(){
-                    calculator.memory = 0;
+                    memory = 0;
                   },
   };
 
