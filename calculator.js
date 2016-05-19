@@ -7,10 +7,11 @@
  */
 var calculatorModule = function () {
   var memory;
-  var total;
+  var total = 0;
 
   return {
     load: load,
+    getTotal: getTotal
   };
 
 
@@ -28,7 +29,9 @@ var calculatorModule = function () {
    * Return the value of `total`
    * @return { Number }
    */
-
+    function getTotal() {
+      return total;
+    }
 
   /**
    * Sums the value passed in with `total`
