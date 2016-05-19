@@ -13,6 +13,12 @@ function calculatorModule(){
    * @param  { Number } x
    * @return { Number }    current total
    */
+  function load(num){
+    if(typeof num !== 'number')
+      throw new TypeError("Not a Number");
+    total = num;
+    return total;
+  }
 
 
   return {
