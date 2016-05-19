@@ -13,7 +13,8 @@ var calculatorModule = function () {
     load: load,
     getTotal: getTotal,
     add: add,
-    subtract: subtract
+    subtract: subtract,
+    multiply: multiply
   };
 
 
@@ -57,6 +58,9 @@ var calculatorModule = function () {
    * Multiplies the value by `total`
    * @param  { Number } x
    */
+    function multiply(x) {
+      total *=x;
+    }
 
 
   /**
