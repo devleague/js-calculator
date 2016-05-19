@@ -6,7 +6,11 @@
  * @return {object} `calculator` object that can be used
  */
  var calculatorModule = function (){
-  return {};
+  return {
+    load: function(){
+
+    }
+  };
 
 
  };
