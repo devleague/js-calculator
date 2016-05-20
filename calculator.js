@@ -15,8 +15,12 @@ var calculatorModule = function() {
    * @return { Number }    current total
    */
   calculator.load = function(number){
-    total = number;
-    return total;
+    if (!Number.isInteger(number))
+      throw new TypeError('wat');
+    else{
+      total = number;
+      return total;
+    }
   };
 
   /**
@@ -32,8 +36,13 @@ var calculatorModule = function() {
    * @param { Number } x
    */
   calculator.add = function(number){
-    total = total + number;
-    return total;
+    if (!Number.isInteger(number)){
+      throw new TypeError('wat');
+    }
+    else {
+      total = total + number;
+      return total;
+    }
   };
 
   /**
@@ -41,8 +50,13 @@ var calculatorModule = function() {
    * @param  { Number } x
    */
   calculator.subtract = function(number){
-    total = total - number;
-    return total;
+    if (!Number.isInteger(number)){
+      throw new TypeError('wat');
+    }
+    else {
+      total = total - number;
+      return total;
+    }
   };
 
   /**
@@ -50,8 +64,13 @@ var calculatorModule = function() {
    * @param  { Number } x
    */
   calculator.multiply = function(number){
-    total = total * number;
-    return total;
+    if (!Number.isInteger(number)){
+      throw new TypeError('wat');
+    }
+    else {
+      total = total * number;
+      return total;
+    }
   };
 
   /**
@@ -59,8 +78,13 @@ var calculatorModule = function() {
    * @param  { Number } x
    */
   calculator.divide = function(number){
-    total = total/number;
-    return total;
+    if (!Number.isInteger(number)){
+      throw new TypeError('wat');
+    }
+    else {
+      total = total/number;
+      return total;
+    }
   };
 
   /**
