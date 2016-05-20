@@ -21,16 +21,7 @@ function calculatorModule () {
     clearMemory: clearMemory
   };
 
-  /**
-   * Checks user input
-   * @param {Number} x input
-   * throws Error if input is invalid.
-   */
-  function checkInput(x) {
-    if(typeof x != 'number'){
-      throw new Error("Invalid Input");
-    }
-  }
+
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
@@ -131,6 +122,14 @@ function calculatorModule () {
    }
   /**
    * Validation
+   * Checks user input
+   * @param {Number} x input
+   * throws Error if input is invalid.
    */
+  function checkInput(x) {
+    if(typeof x != 'number'){
+      throw new Error("Invalid Input");
+    }
+  }
 
 }
