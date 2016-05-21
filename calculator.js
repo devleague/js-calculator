@@ -17,7 +17,7 @@ var calculatorModule = function (){
     divide: divide,
     recallMemory: recallMemory,
     saveMemory: saveMemory,
-    clearMemory: clearMemory
+    clearMemory: clearMemory,
 
    };
 
@@ -28,6 +28,9 @@ var calculatorModule = function (){
    * @return { Number }    current total
    */
   function load(x){
+    if (typeof x !== "number"){
+      throw new Error("ERROR!!!");
+    }
     total = x;
     return total;
    }
@@ -49,6 +52,9 @@ var calculatorModule = function (){
    * @param { Number } x
    */
    function add(x){
+    if (typeof x !== "number"){
+      throw new Error("ERROR!!!");
+    }
     total += x;
 
    }
@@ -59,6 +65,7 @@ var calculatorModule = function (){
    * @param  { Number } x
    */
   function subtract(x){
+
     total -= x;
   }
 
@@ -109,4 +116,8 @@ var calculatorModule = function (){
   /**
    * Validation
    */
+
+
+
+
 };
