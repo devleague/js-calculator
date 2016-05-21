@@ -65,7 +65,9 @@ var calculatorModule = function (){
    * @param  { Number } x
    */
   function subtract(x){
-
+    if (typeof x !== "number"){
+      throw new Error("ERROR!!!");
+    }
     total -= x;
   }
 
