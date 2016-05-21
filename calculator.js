@@ -76,6 +76,9 @@ var calculatorModule = function (){
    * @param  { Number } x
    */
   function multiply(x){
+    if (typeof x !== "number"){
+      throw new Error("ERROR!!!");
+    }
     total *= x;
   }
 
@@ -85,6 +88,9 @@ var calculatorModule = function (){
    * @param  { Number } x
    */
   function divide(x){
+    if (typeof x !== "number"){
+      throw new Error("ERROR!!!");
+    }
     total /=x;
   }
 
