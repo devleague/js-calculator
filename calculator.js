@@ -88,9 +88,10 @@ var calculatorModule = function () {
    * @param  { Number } x
    */
     function divide(x) {
-      if (typeof x !== "number"){
-        throw new Error("Oh oh, an error has occured");
-      }else{
+      if (validate(x)){
+
+      }
+      else{
         total /=x;
       }
     }
@@ -122,4 +123,9 @@ var calculatorModule = function () {
   /**
    * Validation
    */
+    function validate(x) {
+      if (typeof x !== "number"){
+        throw new Error("I'm an error");
+      }
+    }
 };
