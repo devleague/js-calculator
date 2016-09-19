@@ -1,16 +1,13 @@
-/****Check if Browser or CLI****/
-var window = window || undefined;
+/**
+* import your dependencies here at the top.
+* 
+* remove comment when done
+*/
 
-if (window) {
-  GLOBAL = window;
-} else {
-  var fs = require('fs');
-  var vm = require('vm');
-  var chai = require('chai');
-  var functionsFile = fs.readFileSync(process.cwd() + '/calculator.js');
-  vm.runInThisContext(functionsFile); // file runs and it's contents has access to GLOBAL
-}
+
 
 /**
-* Setup chai and write tests below
+* write tests below
+* 
+* remove comment when done
 */
