@@ -6,13 +6,13 @@ The `CalculatorModule` will return an object when invoked. This object will have
 
 This calculator will also have private variables: `total` and `memory`. Users will not be able to access these values directly. Only the functions will be able to interact with those values, functions like: `.add()`, `.subtract()`, `.multiply()`, `.divide()`, etc.
 
-**NOTE**: Make sure you **_VALIDATE_** all of your inputs!! 
+**NOTE**: Make sure you **_VALIDATE_** all of your inputs!!
 
 ```javascript
 "taco" + 3 //Not valid
 ```
 
-##Example of useage
+## Example of usage
 
     var myCalculator = calculatorModule(); // creates a new calculator to be used
     myCalculator.load(6); // initial value to be stored in a private variable named `total`
