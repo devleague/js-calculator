@@ -6,6 +6,12 @@
  * @return {object} `calculator` object that can be used
  */
 
+var calculatorModule = function() {
+
+  var total = 0;
+  var memory = 0;
+
+
 
   /**
    * sets the `total` to the number passed in
@@ -13,35 +19,140 @@
    * @return { Number }    current total
    */
 
+    return {
+
+      load: function(x) {
+
+        total = x;
+
+        return total;
+
+      },
 
   /**
    * Return the value of `total`
    * @return { Number }
    */
 
+      getTotal: function() {
+
+        return total;
+
+      },
 
   /**
    * Sums the value passed in with `total`
    * @param { Number } x
    */
 
+      add: function(x) {
+
+        if( typeof x !== 'number'){
+
+        console.log('NaN');
+
+        }
+
+        total += x;
+
+        return total;
+
+      },
 
   /**
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
 
+      subtract: function(x) {
+
+        if( typeof x !== 'number'){
+
+          console.log('NaN');
+
+        }
+
+        total -= x;
+
+        return total;
+
+      },
 
   /**
    * Multiplies the value by `total`
    * @param  { Number } x
    */
 
+      multiply: function(x) {
+
+        if( typeof x !== 'number'){
+
+          console.log('NaN');
+
+        }
+
+        total *= x;
+
+        return total;
+
+      },
+
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
+
+      divide: function(x) {
+
+        if( typeof x !== 'number'){
+
+          console.log('NaN');
+
+        }
+
+        total /= x;
+
+        return total;
+
+      },
+
+      recallMemory: function() {
+
+        return memory;
+
+      },
+
+      saveMemory: function() {
+
+        memory = total;
+
+        return memory;
+
+      },
+
+      clearMemory: function() {
+
+        memory = 0;
+
+        return memory;
+
+      }
+
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /**
@@ -63,3 +174,5 @@
    * Validation
    */
 
+
+};
