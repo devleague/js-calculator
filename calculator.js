@@ -6,19 +6,63 @@
  * @return {object} `calculator` object that can be used
  */
 
-
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
    * @return { Number }    current total
    */
 
-
   /**
    * Return the value of `total`
    * @return { Number }
    */
+function calculatorModule(x){
+  var memory = 0;
+  var total = 0;
+  var calculator = {
+    load: function(x){
+            validate(x);
+            total = x;
+            return total;
+          },
+    getTotal: function(){
+                return total;
+              },
+    add: function(x){
+            validate(x);
+            total = total + x;
+          },
+    subtract: function(x){
+                validate(x);
+                total = total - x;
+              },
+    multiply: function(x){
+                validate(x);
+                total = total * x;
+              },
+    divide: function(x){
+                validate(x);
+                total = total / x;
+            },
+    recallMemory: function(){
+                    return memory;
+                  },
+    saveMemory: function(){
+                  memory = total;
+                },
+    clearMemory: function(){
+                    memory = 0;
+                  },
+  };
 
+  function validate(x){
+    if(typeof x !== "number"){
+      throw new Error();
+    }
+  }
+
+  return calculator;
+}
 
   /**
    * Sums the value passed in with `total`
