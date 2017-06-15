@@ -98,7 +98,11 @@ function calculatorModule(){
    * Validation
    */
    validate: function (x) {
-      if (typeof x !== 'number') {return ; }
+      if (typeof x !== 'number') {
+          var err = new Error('Not a number!');
+          console.log(err);
+          return err;
+        }
    },
 
    };
