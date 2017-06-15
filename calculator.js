@@ -12,99 +12,105 @@ function calculatorModule(){
   let memory = 0;
   let total = 0;
 
-  return {
-
-  /**
-   * sets the `total` to the number passed in
-   * @param  { Number } x
-   * @return { Number }    current total
-   */
-   load: function (x) {
-      this.validate(x);
-      total = x;
-      return total;
-   },
-
-  /**
-   * Return the value of `total`
-   * @return { Number }
-   */
-   getTotal: function () {
-      return total;
-   },
-
-  /**
-   * Sums the value passed in with `total`
-   * @param { Number } x
-   */
-   add: function (x) {
-      this.validate(x);
-      total += x;
-      return total;
-   },
-
-  /**
-   * Subtracts the value passed in from `total`
-   * @param  { Number } x
-   */
-   subtract: function (x) {
-      this.validate(x);
-      total -= x;
-      return total;
-   },
-
-  /**
-   * Multiplies the value by `total`
-   * @param  { Number } x
-   */
-   multiply: function (x) {
-      this.validate(x);
-      total = total * x;
-      return total;
-   },
-
-  /**
-   * Divides the value passing in by `total`
-   * @param  { Number } x
-   */
-   divide: function (x) {
-      this.validate(x);
-      total = total / x;
-      return total;
-   },
-
-  /**
-   * Return the value stored at `memory`
-   * @return { Number }
-   */
-   recallMemory: function () {
-      return memory;
-   },
-
-  /**
-   * Stores the value of `total` to `memory`
-   */
-   saveMemory: function () {
-      memory = total;
-   },
-
-  /**
-   * Clear the value stored at `memory`
-   */
-   clearMemory: function () {
-      memory = 0;
-   },
   /**
    * Validation
    */
-   validate: function (x) {
+   function validate (x) {
       if (typeof x !== 'number') {
-          var err = new Error('Not a number!');
-          console.log(err);
-          return err;
+          throw new Error('Not a number!');
         }
-   },
+   }
 
-   };
+    /**
+     * sets the `total` to the number passed in
+     * @param  { Number } x
+     * @return { Number }    current total
+     */
+     let load = function (x) {
+        validate(x);
+        total = x;
+        return total;
+     }
 
-};
+    /**
+     * Return the value of `total`
+     * @return { Number }
+     */
+     let getTotal = function () {
+        return total;
+     }
+
+    /**
+     * Sums the value passed in with `total`
+     * @param { Number } x
+     */
+     let add = function (x) {
+        validate(x);
+        total += x;
+        return total;
+     }
+
+    /**
+     * Subtracts the value passed in from `total`
+     * @param  { Number } x
+     */
+     let subtract = function (x) {
+        validate(x);
+        total -= x;
+        return total;
+     }
+
+    /**
+     * Multiplies the value by `total`
+     * @param  { Number } x
+     */
+     let multiply = function (x) {
+        validate(x);
+        total = total * x;
+        return total;
+     }
+
+    /**
+     * Divides the value passing in by `total`
+     * @param  { Number } x
+     */
+     let divide = function (x) {
+        validate(x);
+        total = total / x;
+        return total;
+     }
+
+    /**
+     * Return the value stored at `memory`
+     * @return { Number }
+     */
+     let recallMemory = function () {
+        return memory;
+     }
+
+    /**
+     * Stores the value of `total` to `memory`
+     */
+     let saveMemory = function () {
+        memory = total;
+     }
+
+    /**
+     * Clear the value stored at `memory`
+     */
+     let clearMemory = function () {
+        memory = 0;
+     }
+
+     return  {
+      load: load,
+      getTotal: getTotal,
+      add: add,
+      subtract: subtract,
+      multiply: multiply,
+      divide: divide,
+      recallMemory: recallMemory,
+      saveMemory: saveMemory,
+      clearMemory: clearMemory
+     }
+}
