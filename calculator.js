@@ -77,21 +77,21 @@ function calculatorModule(){
    * Return the value stored at `memory`
    * @return { Number }
    */
-   recallMemory: function (x) {
+   recallMemory: function () {
       return memory;
    },
 
   /**
    * Stores the value of `total` to `memory`
    */
-   saveMemory: function (x) {
+   saveMemory: function () {
       memory = total;
    },
 
   /**
    * Clear the value stored at `memory`
    */
-   clearMemory: function (x) {
+   clearMemory: function () {
       memory = 0;
    },
   /**
@@ -107,4 +107,4 @@ function calculatorModule(){
 
    };
 
-}
+};
