@@ -19,12 +19,12 @@ return {
    */
    
 
-load: function(num) {
+load: (num) => {
     if(typeof num === 'number') {
       total = num; 
       return num;
     } else {
-      return null;
+      throw new Error();
     }
   },
  
@@ -33,7 +33,7 @@ load: function(num) {
    * Return the value of `total`
    * @return { Number }
    */
- getTotal: function(){
+ getTotal: () => {
     return total;
   },
 
@@ -47,7 +47,7 @@ load: function(num) {
       total = total + num;
       return total;
     } else {
-      return null;
+      throw new Error();
     }
    },
 
@@ -61,7 +61,7 @@ subtract: (num) => {
     total = total - num;
     return total;
   } else {
-    return null;
+    throw new Error();
   }
 },
 
@@ -74,7 +74,7 @@ multiply: (num) => {
     total = total * num;
     return total;
   } else {
-    return null;
+    throw new Error();
   }
 },
 
@@ -88,7 +88,7 @@ divide: (num) => {
     total = total / num;
     return total;
   } else {
-    return null;
+    throw new Error();
   }
 },
 
