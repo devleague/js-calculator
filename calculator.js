@@ -6,60 +6,72 @@
  * @return {object} `calculator` object that can be used
  */
 
+function calculatorModule(){
+    let _memory = 0;
+    let _total = 0;
 
-  /**
-   * sets the `total` to the number passed in
-   * @param  { Number } x
-   * @return { Number }    current total
-   */
+  function load (num) {
+      validate (num);
+      _total = num;
+      return _total;
+  };
+    
+  function getTotal () {
+      return _total;
+  };
+        
+  function add (num) {
+       validate (num);
+       _total += num;
+  };
 
+  function subtract (num) {
+       validate (num);
+       _total -= num;
+  };
 
-  /**
-   * Return the value of `total`
-   * @return { Number }
-   */
+  function multiply (num) {
+       validate (num);
+       _total *= num;
+  };
 
+  function divide (num) {
+      validate (num);
+      _total /= num;
+  };
 
-  /**
-   * Sums the value passed in with `total`
-   * @param { Number } x
-   */
+  function recallMemory () {
+      return _memory;
+  };
 
+  function saveMemory () {
+      _memory = _total;
+  };
 
-  /**
-   * Subtracts the value passed in from `total`
-   * @param  { Number } x
-   */
+  function clearMemory () {
+      _memory = 0;
+  };
 
+  function validate (num) {
+      if (typeof num !== 'number') {
+          throw new Error('Try again!');
+      } else {
+          return true
+      }
+  };
 
-  /**
-   * Multiplies the value by `total`
-   * @param  { Number } x
-   */
+  let calculator = {
+      load: load,
+      getTotal: getTotal,
+      add: add,
+      subtract: subtract,
+      multiply: multiply,
+      divide: divide,
+      recallMemory: recallMemory,
+      saveMemory: saveMemory,
+      clearMemory: clearMemory
+  };
 
+return calculator;
 
-  /**
-   * Divides the value passing in by `total`
-   * @param  { Number } x
-   */
-
-
-  /**
-   * Return the value stored at `memory`
-   * @return { Number }
-   */
-
-
-  /**
-   * Stores the value of `total` to `memory`
-   */
-
-
-  /**
-   * Clear the value stored at `memory`
-   */
-
-  /**
-   * Validation
-   */
-
+};
