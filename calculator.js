@@ -9,6 +9,18 @@
 function calculatorModule(memory, total) {
     let _total = 0;
     let _memory = 0;
+    
+    return {
+     load: load,
+     getTotal: getTotal,
+     add: add,
+     subtract: subtract,
+     multiply: multiply, 
+     divide: divide,  
+     recallMemory: recallMemory,
+     saveMemory: saveMemory,
+     clearMemory: clearMemory,
+    }
 
   /**
    * sets the `total` to the number passed in
@@ -17,13 +29,10 @@ function calculatorModule(memory, total) {
    */
 
    function load(x) {
-       if ((typeof x) === 'number') {
-            _total = x;
-            return _total;
-       } else {
-            throw new Error;
-       }
-       
+
+        validate(x);
+        _total = x;
+        return _total;
    }
 
   /**
@@ -41,11 +50,8 @@ function calculatorModule(memory, total) {
    */
 
     function add(x) {
-        if ((typeof x) === 'number') {
-            _total += x;
-        } else {
-            throw new Error;
-        }
+        validate(x);
+        _total += x;
     }
   /**
    * Subtracts the value passed in from `total`
@@ -53,11 +59,8 @@ function calculatorModule(memory, total) {
    */
 
     function subtract(x) {
-        if ((typeof x) === 'number') {
-            _total -= x;
-       } else {
-            throw new Error;
-       }
+        validate(x);
+        _total -= x;
     }
 
   /**
@@ -65,11 +68,8 @@ function calculatorModule(memory, total) {
    * @param  { Number } x
    */
     function multiply(x) {
-        if ((typeof x) === 'number') {
-            _total *= x;
-       } else {
-            throw new Error;
-       }
+        validate(x);
+        _total *= x;
     }
 
   /**
@@ -78,11 +78,8 @@ function calculatorModule(memory, total) {
    */
 
     function divide(x) {
-        if ((typeof x) === 'number') {
-            _total /= x;
-       } else {
-            throw new Error;
-       }
+        validate(x);
+        _total /= x;
     }
 
   /**
@@ -114,18 +111,9 @@ function calculatorModule(memory, total) {
    * Validation
    */
 
-
-
-   return {
-    load: load,
-    getTotal: getTotal,
-    add: add,
-    subtract: subtract,
-    multiply: multiply, 
-    divide: divide,  
-    recallMemory: recallMemory,
-    saveMemory: saveMemory,
-    clearMemory: clearMemory,
+   function validate(x) {
+       if (typeof x !== 'number') {
+          throw new Error();
+       }
    }
-
 }
